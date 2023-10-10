@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="chessboard">
+    {% for row in board %}
+        <div class="row">
+            {% for cell in row %}
+                <div class="chess-cell">
+                    <!-- Aquí irán tus piezas, puedes usar emojis, imágenes o caracteres Unicode -->
+                    {{ cell.symbol() if cell else '' }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
